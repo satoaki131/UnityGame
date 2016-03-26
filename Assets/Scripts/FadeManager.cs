@@ -3,7 +3,8 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class FadeManager : MonoBehaviour {
+public class FadeManager : MonoBehaviour
+{
 
     static GameObject _instance = null;
 
@@ -19,7 +20,7 @@ public class FadeManager : MonoBehaviour {
 
     void Awake()
     {
-        if(_instance == null)
+        if (_instance == null)
         {
             DontDestroyOnLoad(gameObject);
             _instance = gameObject;
@@ -33,19 +34,25 @@ public class FadeManager : MonoBehaviour {
         _fadeObject.color = new Color(0.0f, 0.0f, 0.0f, _alpha);
 
     }
-    
-    void Update()
+
+    //void Update()
+    //{
+    //    if(Input.GetMouseButtonDown(0))
+    //    {
+    //        FadeStart(GameScene.GAME);
+    //    }
+    //}
+
+    private void FadeStart(GameScene scene)
     {
-        if(Input.GetMouseButtonDown(0) && !_fadeFlug)
-        {
-            _fadeFlug = true;
-            StartCoroutine(Fade(GameScene.GAME));
-        }
+        if (_fadeFlug) return;
+        _fadeFlug = true;
+        StartCoroutine(Fade(scene));
     }
 
     public IEnumerator Fade(GameScene scene)
     {
-        while(_alpha < 1.0f)
+        while (_alpha < 1.0f)
         {
             FadeIn();
             yield return null;
