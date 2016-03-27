@@ -9,7 +9,6 @@ public class AudioManager : MonoBehaviour {
     private AudioClip[] _clip;
 
     private AudioSource _source;
-    private int _index = 0;
 
     void Awake()
     {

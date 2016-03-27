@@ -43,7 +43,7 @@ public class FadeManager : MonoBehaviour
     //    }
     //}
 
-    private void FadeStart(GameScene scene)
+    public void SceneChange(GameScene scene)
     {
         if (_fadeFlug) return;
         _fadeFlug = true;
