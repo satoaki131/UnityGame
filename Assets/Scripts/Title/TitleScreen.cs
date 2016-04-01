@@ -5,7 +5,7 @@ public class TitleScreen : MonoBehaviour {
 
     public void StartButton()
     {
-        FindObjectOfType<FadeManager>().SceneChange(GameScene.GAME);
+        FindObjectOfType<FadeManager>().SceneChange(GameScene.MENU);
     }
 
 }
