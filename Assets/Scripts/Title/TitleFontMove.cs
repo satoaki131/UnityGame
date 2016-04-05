@@ -4,12 +4,12 @@ using System;
 
 public class TitleFontMove : MonoBehaviour {
 
-    [SerializeField]
-    private float _moveY = 5.0f;
-
     private float _sinMoveCount = 0;
 
+    [SerializeField]
     private float _speed = 2.0f;
+    [SerializeField]
+    private float _moveY = 1.0f;
 
     void Update()
     {
